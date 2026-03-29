@@ -5,19 +5,25 @@ import cors from "cors";
 const app=express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://chat-application-et4d.vercel.app"
+  ],
+  methods: ["GET", "POST"]
+}));
 
-app.get("/",(req,res)=>{
-
-    res.send("this is the server , which is live");
+app.get("/", (req, res) => {
+  res.send("this is the server , which is live");
 });
-const server=http.createServer(app);
+
+const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
     origin: [
       "http://localhost:5173",
-      "https://chat-application-et4d-qx4oxqut8-sawastik7-bits-projects.vercel.app"
+      "https://chat-application-et4d.vercel.app"
     ],
     methods: ["GET", "POST"]
   }
