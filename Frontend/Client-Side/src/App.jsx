@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="hero-root">
       <div className="hero-grid">
-        {/* Left: brand / marketing copy */}
+       
         <section className="hero-copy">
           <span className="badge">Realtime · Socket.IO · React</span>
           <h1>
@@ -39,7 +39,7 @@ function App() {
           </ul>
         </section>
 
-        {/* Right: join/chat card */}
+        
         <section className="hero-card">
           {!showChat ? (
             <Join
