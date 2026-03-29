@@ -13,11 +13,14 @@ app.get("/",(req,res)=>{
 });
 const server=http.createServer(app);
 
-const io=new Server(server,{
-    cors:{
-        origin:"http://localhost:5173",
-        methods: ["GET","POST"],
-    }
+const io = new Server(server, {
+  cors: {
+    origin: [
+      "http://localhost:5173",
+      "https://chat-application-et4d-qx4oxqut8-sawastik7-bits-projects.vercel.app"
+    ],
+    methods: ["GET", "POST"]
+  }
 });
 
 
