@@ -4,7 +4,9 @@ import Join from "./compoenents/Join";
 import Chat from "./compoenents/Chat";
 import "./App.css";
 
-const socket = io("http://localhost:5000", { autoConnect: true });
+const socket = io(import.meta.env.VITE_SOCKET_URL, {
+  autoConnect: true,
+});
 
 function App() {
   const [username, setUsername] = useState("");

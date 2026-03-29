@@ -46,7 +46,8 @@ socket.on("disconnect",()=>{
 
 })
 
+const PORT = process.env.PORT || 5000;
 
-server.listen(5000,(req,res)=>{
-    console.log("this server is live on port 5000");
-})
+server.listen(PORT, () => {
+  console.log("server live on port", PORT);
+});
